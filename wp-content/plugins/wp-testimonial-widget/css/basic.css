@@ -1,0 +1,7 @@
+.chkRequired{color: #FF0026}
+.frm_testi{margin-top: 8px;}
+input[type="text"].error, textarea.error {border-color:#FF0026 !important;}
+label.error {margin-left: 5px; color:#FF0026;border-color:#FF0000 !important;}
+.label_class{width: 250px;}
+.cancel_link{margin-left: 8px;}
+.column-Rank{width:75px !important;}

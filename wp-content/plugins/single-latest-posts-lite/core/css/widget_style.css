@@ -1,0 +1,53 @@
+/*
+ * Single Latest Posts v1.0
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ * 
+ * Copyright 2007 - 2012 L'Elite de José SAYAGO (opensource@laelite.info)
+ * 'SLPosts Lite', 'SLPosts Pro', 'NLPosts' are unregistered trademarks of L'Elite, 
+ * and cannot be re-used in conjuction with the GPL v2 usage of this software 
+ * under the license terms of the GPL v2 without permission.
+ *
+ *
+ * Great and ugly things aren't as good
+ * as great and beautiful things ;)
+ */
+/*
+ * Widget Style
+ */
+#slp-widget h4 {
+	border: 1px dotted #afafaf;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background: #f4f4f4;
+	padding: 3px;
+}
+#slp-widget h4 a {
+	display: block;
+	width: 100%;
+	color: #000;
+	text-decoration: none;
+}
+#slp-widget h4 a:hover {
+	color: #ff4a4b;
+}
+#slp-widget [class$='-cnt'] {
+	border: 1px solid #dadada;
+	padding: 2px;
+	display: none;
+}
+#slp-widget label, #slp-widget legend {
+	display: block;
+	width: 100%;
+	background: #fbfbfb;
+	color: #ff4a4b;
+}
+#slp-widget legend {
+	width: 99%;
+	margin-bottom: 2px;
+}
+#slp-widget input, #slp-widget select {
+	display: block;
+	width: 100%;
+}

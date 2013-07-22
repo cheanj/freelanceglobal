@@ -1,0 +1,527 @@
+/*
+ * Single Latest Posts RTL v1.0
+ *
+ * Copyright 2007 - 2012  L'Elite
+ * Licensed under the GPL v2.0
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Great and ugly things aren't as good
+ * as great and beautiful things ;)
+ */
+/*\
+ * =========================
+ * |                       |
+ * | ++ General Styles ++  |
+ * |                       |
+ * ========================= 
+\*/
+#slposts .slp-alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  color: #c09853;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+#slposts .slp-alert .slp-close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 20px;
+}
+#slposts button {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+#slposts button {
+  *overflow: visible;
+  line-height: normal;
+}
+#slposts button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+#slposts button,
+input[type="button"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+#slposts .slp-close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+#slposts .slp-close:hover {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+#slposts button.slp-close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+[class^="slpicon-"],
+[class*=" slpicon-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("../img/glyphicons-halflings.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+}
+.slpicon-white {
+  background-image: url("../img/glyphicons-halflings-white.png");
+}
+.slpicon-comment {
+  background-position: -240px -120px;
+}
+.slpicon-bookmark {
+  background-position: -72px -48px;
+  float: left;
+}
+.slpicon-calendar {
+  background-position: -192px -120px;
+  float: left;
+}
+.slposts-container {
+
+}
+.slposts-container a:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.slposts-container a:hover,
+.slposts-container a:active {
+    outline: 0;
+}
+.slposts-container img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+.slposts-container button,
+.slposts-container input,
+.slposts-container select,
+.slposts-container textarea {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: middle;
+}
+.slposts-container button,
+.slposts-container input {
+    *overflow: visible;
+    line-height: normal;
+}
+.slposts-container button::-moz-focus-inner,
+.slposts-container input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+.slposts-container button,
+.slposts-container input[type="button"],
+.slposts-container input[type="reset"],
+.slposts-container input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+.slposts-container input[type="search"] {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-appearance: textfield;
+}
+.slposts-container input[type="search"]::-webkit-search-decoration,
+.slposts-container input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+.slposts-container textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+/*\
+ * --------------
+ * | Pagination |
+ * --------------
+\*/
+.slp-pagination {
+    height: 36px;
+    margin: 18px 0;
+    text-align: center;
+    clear: both;
+    border-top: 1px dotted #efefef;
+}
+.slp-pagination ul {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-left: 0;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.slp-pagination li {
+    display: inline;
+}
+.slp-pagination a, 
+.slp-pagination span {
+    float: left;
+    padding: 0 14px;
+    line-height: 34px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+}
+.slp-pagination 
+a:hover,
+.slp-pagination 
+.current {
+    background-color: #f5f5f5;
+}
+.slp-pagination 
+.current {
+    color: #999999;
+    cursor: default;
+}
+.slp-pagination span,
+.slp-pagination 
+.disabled a,
+.slp-pagination 
+.disabled a:hover {
+    color: #999999;
+    background-color: transparent;
+    cursor: default;
+}
+.slp-pagination li:first-child a, 
+.slp-pagination li:first-child span {
+    border-left-width: 1px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+}
+.slp-pagination li:last-child a, 
+.slp-pagination li:last-child span {
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+}
+/*\
+ * =========================
+ * |                       |
+ * | -- General Styles --  |
+ * |                       |
+ * ========================= 
+\*/
+/*\
+ * =========================
+ * |                       |
+ * | ++ Unordered Lists ++ |
+ * |                       |
+ * ========================= 
+\*/
+/*\
+ * -----------
+ * | Content |
+ * -----------
+\*/
+.slposts-ulist-container 
+.slposts-ulist-wtitle {
+    font-size: 1.3em;
+    border-bottom: 1px dotted #efefef;
+}
+ul.slposts-ulist, 
+li.slposts-ulist-litem, 
+ul.slposts-ulist-thumbnail,
+ul.slposts-ulist-excerpt {
+    list-style: none !important;
+    margin: 0 !important;
+}
+li.slposts-ulist-litem {
+    display: block;
+    padding-bottom: 20px;
+}
+div.thumbnail a > img {
+    border: 1px solid #efefef;
+    padding: 3px;
+}
+div.thumbnail a > img:hover {
+    -webkit-box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+    -moz-box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+    box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+}
+div.thumbnail 
+ul.slposts-ulist-excerpt
+a > img {
+    border: 0;
+    padding: 0;
+}
+.slposts-ulist-title {
+    border-bottom: 1px dotted #efefef;
+}
+.slposts-ulist-title a {
+    font-size: 1.4em !important;
+    text-decoration: none;
+}
+.slposts-ulist-meta {
+    float: left;
+    margin-left: 5px;
+    font-family: sans-serif !important;
+    font-size: .8em;
+    border: 1px dotted #efefef;
+    padding: 3px;
+    color: #777;
+}
+.slposts-ulist-meta a {
+    text-decoration: none;
+}
+.slposts-ulist-metafooter {
+    display: block;
+    clear: both;
+    border-top: 1px dotted #efefef;
+    font-size: .8em;
+    text-align: left;
+    color: #777;
+}
+.slposts-ulist-excerpt {
+    text-align: justify;
+}
+/*\
+ * =========================
+ * |                       |
+ * | -- Unordered Lists -- |
+ * |                       |
+ * ========================= 
+\*/
+/*\
+ * =========================
+ * |                       |
+ * | ++ Ordered Lists ++   |
+ * |                       |
+ * ========================= 
+\*/
+/*\
+ * -----------
+ * | Content |
+ * -----------
+\*/
+.slposts-olist-container 
+.slposts-olist-wtitle {
+    font-size: 1.3em;
+    border-bottom: 1px dotted #efefef;
+}
+ol.slposts-olist, 
+li.slposts-olist-litem, 
+ul.slposts-olist-thumbnail,
+ul.slposts-olist-excerpt {
+    list-style: none !important;
+    margin: 0 !important;
+}
+li.slposts-olist-litem {
+    display: block;
+    padding-bottom: 20px;
+}
+div.thumbnail a > img {
+    border: 1px solid #efefef;
+    padding: 3px;
+}
+div.thumbnail a > img:hover {
+    -webkit-box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+    -moz-box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+    box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+}
+div.thumbnail 
+ul.slposts-olist-excerpt
+a > img {
+    border: 0;
+    padding: 0;
+}
+.slposts-olist-title {
+    border-bottom: 1px dotted #efefef;
+}
+.slposts-olist-title a {
+    font-size: 1.4em !important;
+    text-decoration: none;
+}
+.slposts-olist-meta {
+    float: left;
+    margin-left: 5px;
+    font-family: sans-serif !important;
+    font-size: .8em;
+    border: 1px dotted #efefef;
+    padding: 3px;
+    color: #777;
+}
+.slposts-olist-meta a {
+    text-decoration: none;
+}
+.slposts-olist-metafooter {
+    display: block;
+    clear: both;
+    border-top: 1px dotted #efefef;
+    font-size: .8em;
+    text-align: left;
+    color: #777;
+}
+.slposts-olist-excerpt {
+    text-align: justify;
+}
+/*\
+ * =========================
+ * |                       |
+ * | -- Ordered Lists --   |
+ * |                       |
+ * ========================= 
+\*/
+/*\
+ * =========================
+ * |                       |
+ * | ++ Blocks ++          |
+ * |                       |
+ * ========================= 
+\*/
+/*\
+ * -----------
+ * | Content |
+ * -----------
+\*/
+.slposts-container
+.slposts-block-wtitle {
+    font-size: 1.3em;
+    border-bottom: 1px dotted #efefef;
+}
+.slposts-block-title a {
+    font-size: 1.4em !important;
+    text-decoration: none;
+}
+ul.slposts-block-thumbnail {
+    list-style: none !important;
+    margin: 0 !important;
+}
+.slposts-block-item {
+    float: left;
+    width: 47%;
+    margin-right: 10px;
+}
+.slposts-block-thumbnail a > img {
+    border: 1px solid #efefef;
+    padding: 3px;
+}
+.slposts-block-thumbnail a > img:hover {
+    -webkit-box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+    -moz-box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+    box-shadow: 1px 1px 3px rgba(99, 175, 208, 0.15);
+}
+.slposts-block-thumbnail
+div.slposts-block-excerpt
+a > img {
+    border: 0;
+    padding: 0;
+}
+.slposts-block-meta {
+    float: left;
+    margin-left: 5px;
+    font-family: sans-serif !important;
+    font-size: .8em;
+    border: 1px dotted #efefef;
+    padding: 3px;
+    color: #777;
+}
+.slposts-block-meta a {
+    text-decoration: none;
+}
+.slposts-block-metafooter {
+    display: block;
+    clear: both;
+    border-top: 1px dotted #efefef;
+    font-size: .8em;
+    text-align: left;
+    color: #777;
+}
+.slposts-block-excerpt {
+    text-align: justify;
+}
+/*\
+ * =========================
+ * |                       |
+ * | -- Blocks --          |
+ * |                       |
+ * ========================= 
+\*/
+/*\
+ * =========================
+ * |                       |
+ * | ++ Widgets ++         |
+ * |                       |
+ * =========================
+\*/
+.slposts-widget 
+.slposts-block-item {
+    float: none;
+    width: 100%;
+    margin: 0;
+}
+.slposts-widget
+.slposts-ulist-meta,
+.slposts-widget
+.slposts-olist-meta,
+.slposts-widget
+.slposts-block-meta {
+    float: left;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+.slposts-widget
+.slposts-ulist-metafooter,
+.slposts-widget
+.slposts-olist-metafooter,
+.slposts-widget
+.slposts-block-metafooter {
+    text-align: left;
+}
+.slposts-widget
+.slp-pagination a.page-numbers,
+.slposts-widget
+.slp-pagination span.current,
+.slposts-widget
+.slp-pagination span.dots {
+    display: none;
+}
+.slposts-widget
+.slp-pagination span.current,
+.slposts-widget
+.slp-pagination .prev,
+.slposts-widget
+.slp-pagination .next {
+    display: inline !important;
+}
+/*\
+ * =========================
+ * |                       |
+ * | -- Widgets --         |
+ * |                       |
+ * =========================
+\*/

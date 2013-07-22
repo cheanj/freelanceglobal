@@ -1,0 +1,16 @@
+a, a:visited { color: #777777; }
+
+input[type=submit] { background: #777777; color:#fff; }
+input[type=submit]:hover,a.link-button:hover { background: #555555; }
+
+a.link-button { background: #777777; color:#fff !important; }
+.nav li a:hover, .nav li.current_page_item a { color:#777777; }
+.nav li li a:hover { background: #777777; color:#fff; }
+#ywtem { color:#777777; }
+.news-lst time b { color:#777777; }
+.newsletter h4 { color:#777777; }
+
+.comment-reply-link, .btn-reply { color: #fff; background: #777777; }
+.comment-reply-link:hover, .btn-reply:hover { color:#fff; background: #555555; }
+
+#paging a.active, #paging .current { background: #555555; color:#fff; }

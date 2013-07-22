@@ -1,0 +1,162 @@
+/*
+ * Single Latest Posts v1.0
+ *
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ * 
+ * Copyright 2007 - 2012 L'Elite de José SAYAGO (opensource@laelite.info)
+ * 'SLPosts Lite', 'SLPosts Pro', 'NLPosts' are unregistered trademarks of L'Elite, 
+ * and cannot be re-used in conjuction with the GPL v2 usage of this software 
+ * under the license terms of the GPL v2 without permission.
+ *
+ *
+ * Great and ugly things aren't as good
+ * as great and beautiful things ;)
+ */
+[class^="slpicon-"],
+[class*=" slpicon-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("../img/glyphicons-halflings.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+}
+.slpicon-white {
+  background-image: url("../img/glyphicons-halflings-white.png");
+}
+.slpicon-leaf {
+  background-position: -48px -120px;
+}
+#slposts_shortcode label, #slposts_shortcode legend {
+    background: #efefef;
+    color:#111;
+    border:0;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(255,255,255,0.7) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(255,255,255,0.7) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(255,255,255,0.7) inset;
+    color: rgba(0, 0, 0, 0.72);
+    font-size: 13px;
+    padding:4px;
+    font-weight: bold;
+    font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.37);
+}
+#slposts_shortcode input, #slposts_shortcode select {
+    margin-top:7px;
+    margin-bottom:7px;
+    width: 250px;
+}
+.slposts_shortcode_submit {
+    margin-top:15px;
+    background:transparent url('../img/button_submit.gif') no-repeat;
+    width:100px;
+    height:40px;
+    border:0;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    color: rgba(253, 253, 253, 0.76) !important;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+    text-shadow: 0 1px 1px hsla(234, 50, 70, 0.37);
+}
+.slposts_shortcode_submit:hover {
+    -moz-box-shadow:inset 0px 0 1px rgba(0, 0, 0, 0.72);
+    -webkit-box-shadow:inset 0 0 1px rgba(0, 0, 0, 0.72);
+    box-shadow:inset 0 0 1px rgba(0, 0, 0, 0.72);
+    color:rgba(255, 255, 255, 1) !important;
+}
+.slpnav {
+  margin-bottom: 20px;
+  margin-left: 0;
+  list-style: none;
+}
+.slpnav > li > a {
+  display: block;
+  background-color: #333;
+  border: 1px solid #222;
+  color: #fbfbfb !important;
+  text-decoration: none !important;
+}
+.slpnav > li > a:hover {
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333 !important;
+  border: 1px solid #ccc;
+}
+.slpnav > .pull-right {
+  float: right;
+}
+.slpnav-pills {
+  *zoom: 1;
+}
+.slpnav-pills:before,
+.slpnav-pills:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.slpnav-pills:after {
+  clear: both;
+}
+.slpnav-pills > li {
+  float: left;
+}
+.slpnav-pills > li > a {
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: 2px;
+  line-height: 14px;
+}
+.slpnav-pills > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.slpnav-pills > .active > a,
+.slpnav-pills > .active > a:hover {
+  color: #ffffff;
+  background-color: #0088cc;
+}
+.slptab-content {
+  overflow: auto;
+}
+.slptabs-below > .slpnav-tabs,
+.slptabs-right > .slpnav-tabs,
+.slptabs-left > .slpnav-tabs {
+  border-bottom: 0;
+}
+.slptab-content > .slptab-pane,
+.slppill-content > .slppill-pane {
+  display: none;
+}
+.slptab-content > .active,
+.slppill-content > .active {
+  display: block;
+}
+.slp-promo {
+  border: 1px dotted #efefef;
+  background: #fbfbfb;
+  text-align: right;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding-right: 5px;
+}
+.slp-promo a {
+  color: #0088cc;
+}
+.slp-promo a:hover {
+  color: #333;
+}

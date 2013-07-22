@@ -1,0 +1,16 @@
+a, a:visited { color: #2083d5; }
+
+input[type=submit] { background: #2083d5; color:#fff; }
+input[type=submit]:hover,a.link-button:hover { background: #1a74be; }
+
+a.link-button { background: #2083d5; color:#fff !important; }
+.nav li a:hover, .nav li.current_page_item a { color:#2083d5; }
+.nav li li a:hover { background: #2083d5; color:#fff; }
+#ywtem { color:#2083d5; }
+.news-lst time b { color:#2083d5; }
+.newsletter h4 { color:#2083d5; }
+
+.comment-reply-link, .btn-reply { color: #fff; background: #2083d5; }
+.comment-reply-link:hover, .btn-reply:hover { color:#fff; background: #1a74be; }
+
+#paging a.active, #paging .current { background: #1A74BE; color:#fff; }
